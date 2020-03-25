@@ -81,6 +81,9 @@ module Trestle
     # Default adapter class used by all admin resources
     option :default_adapter, Adapters.compose(Adapters::ActiveRecordAdapter, Adapters::DraperAdapter)
 
+    # Builder class used by all admin resources
+    option :resource_builder_class, -> { Trestle::Resource::Builder }
+
     # Register a custom form field class
     def form_field(name, klass)
       Form::Builder.register(name, klass)

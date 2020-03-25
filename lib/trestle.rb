@@ -33,7 +33,7 @@ module Trestle
   end
 
   def self.resource(name, options={}, &block)
-    register(Resource::Builder.create(name, options, &block))
+    register(config.resource_builder_class.create(name, options, &block))
   end
 
   def self.register(admin)
